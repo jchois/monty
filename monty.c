@@ -7,19 +7,21 @@
  *Return: 0 success
  */
 
-int main (int argc, char *argv[])
+int main (int argc, char **argv)
 {
+	FILE *newfile;
+	
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file \n");
-		exit(EXIT_FAILURE)
+		exit(EXIT_FAILURE);
 	}
 
 	newfile = fopen(argv[1], "r");
 
-	if (newfile = NULL)
+	if (newfile == NULL)
 	{
-		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", *argv);
 		exit(EXIT_FAILURE);
 	}
 
