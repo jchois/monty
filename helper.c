@@ -7,7 +7,7 @@
  * Return: new node
  */
 
-void _push(stack_t **stack, unsigned int n)
+void _push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
 	stack_t *tmp;
@@ -22,7 +22,7 @@ void _push(stack_t **stack, unsigned int n)
 
 	//*stack = new_node;
 
-	new_node->n = n;
+	new_node->n = glob_vars;
 	new_node->prev = NULL;
 	if (tmp == NULL)
 		new_node->next = NULL;
@@ -44,9 +44,12 @@ void _push(stack_t **stack, unsigned int n)
  * Return: new node
  */
 
-int _pall(stack_t **stack, unsigned int n)
+void _pall(stack_t **stack, unsigned int n)
 {
     stack_t *tmp = *stack;
+
+	if(!*stack)
+		exit(EXIT_FAILURE);
 
 	(void)n;
 	while (tmp != NULL)
