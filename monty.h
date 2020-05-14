@@ -37,5 +37,22 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct glob_vars - struct for global variables
+ * @glob_int: integer
+ * Description: structure that contains the variables
+ * shared across the whole program
+ */
+typedef struct glob_vars
+{
+    int glob_int;
+} glob_t;
+
+extern glob_t glob_vars;
+glob_t glob_vars;
+
+void call_opcodes(stack_t **stack, char *op, unsigned int line_number);
+void _pall(stack_t **stack, unsigned int line_number);
+void _push(stack_t **stack, unsigned int line_number);
 
 #endif
