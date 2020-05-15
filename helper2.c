@@ -1,10 +1,9 @@
 #include "monty.h"
 
 /**
- * free_list - free a double lk list
- * @head: head of the lk list
- *
- * Return: Nothing
+ * free_l - free a double linked list
+ * @head: head of the linked list
+ * Return: Void
  */
 
 void free_l(stack_t *head)
@@ -23,10 +22,9 @@ void free_l(stack_t *head)
 }
 
 /**
- * is_number - checks if the push command has a number
+ * _isnumber - checks if the push command has a number
  * @chk_strings: character to be checked
- *
- * Return: 0 on failure, 1 on success
+ * Return: 0 on fail, 1 success
  */
 
 int _isnumber(char *chk_strings)

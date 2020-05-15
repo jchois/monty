@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <ctype.h>
+#include <unistd.h>
 
 #define DELIMS "\n \t\r"
 

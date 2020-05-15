@@ -22,10 +22,10 @@ int wrapper(unsigned int line, char **chk_strings, stack_t **stack)
 			free(chk_strings);
 			exit(EXIT_FAILURE);
 		}
-		call_opcodes(chk_strings[0], line)(stack, line);
+		
 	}
-	else
-		call_opcodes(chk_strings[0], line)(stack, line);
+	
+	call_opcodes(chk_strings[0], line)(stack, line);
 
 	return (0);
 }

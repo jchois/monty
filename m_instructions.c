@@ -17,12 +17,14 @@ void (*call_opcodes(char *op, unsigned int line_number))(stack_t **stack, unsign
 	};
 
 
-        for (i = 0; m_functions[i].opcode; i++)
+        for (i = 0; m_functions[i].opcode != NULL; i++)
         {
+            
             if (strcmp(op, m_functions[i].opcode) == 0)
-            {              
+            {             
                 return (m_functions[i].f);
             }
+            
         }
        
 		fprintf(stderr, "L%u: unknown instruction %s\n", line_number, op);

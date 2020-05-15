@@ -10,7 +10,6 @@
 int operation(char *arv_1)
 {
 	size_t len;
-	ssize_t read;
 	unsigned int line_number = 0;
 	char *line = NULL;
 	char **op;
@@ -26,7 +25,7 @@ int operation(char *arv_1)
 		exit(EXIT_FAILURE);
 	}
 
-	while ((read = getline(&line, &len, nf)) != -1)
+	while (getline(&line, &len, nf) != -1)
 	{
 
 		op = _splitline(line);
