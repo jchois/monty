@@ -4,10 +4,10 @@
  *main - run monty
  *@argc: number arguments
  *@argv: name argument
- *Return: 0 success
+ *Return: success
  */
 
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 
 
