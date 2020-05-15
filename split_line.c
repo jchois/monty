@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _tokenizer - Parses the line into tokens
+ * _splitline - split the line into tokens
  * @line: string read by getline function
  *
  * Return: Array of tokens on success, NULL on failure
