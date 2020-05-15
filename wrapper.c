@@ -13,7 +13,7 @@ int wrapper(unsigned int line, char **chk_strings, stack_t **stack)
 {
 	if (strcmp(chk_strings[0], "push") == 0)
 	{
-		if (_isnumber(chk_strings[1]) == 1) // hacer isnumber!!
+		if (_isnumber(chk_strings[1]) == 1)
 			glob_vars.glob_int = atoi(chk_strings[1]);
 		else
 		{
@@ -29,4 +29,3 @@ int wrapper(unsigned int line, char **chk_strings, stack_t **stack)
 
 	return (0);
 }
-
