@@ -57,6 +57,7 @@ glob_t glob_vars;
 
 void _pall(stack_t **stack, unsigned int line_number);
 void _push(stack_t **stack, unsigned int line_number);
+void _nop(stack_t **stack, unsigned int line_number);
 int operation(char *argv);
 char **_splitline(char *line);
 void free_l(stack_t *head);
