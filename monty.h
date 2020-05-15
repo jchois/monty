@@ -7,6 +7,8 @@
 #include <string.h>
 #include <ctype.h>
 
+#define DELIMS "\n \t\r"
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -51,8 +53,13 @@ typedef struct glob_vars
 extern glob_t glob_vars;
 glob_t glob_vars;
 
-void call_opcodes(stack_t **stack, char *op, unsigned int line_number);
+
 void _pall(stack_t **stack, unsigned int line_number);
 void _push(stack_t **stack, unsigned int line_number);
+int operation(char *argv);
+char **_splitline(char *line);
+void free_l(stack_t *head);
+int _isnumber(char *chk_strings);
+void (*call_opcodes(char *op, unsigned int line_number))(stack_t **stack, unsigned int line_number)
 
 #endif

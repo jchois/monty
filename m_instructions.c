@@ -5,9 +5,10 @@
  * @op: getline, operator
  * 
  */
-void call_opcodes(stack_t **stack, char *op, unsigned int line_number)
+
+void (*call_opcodes(char *op, unsigned int line_number))(stack_t **stack, unsigned int line_number)
 {
-    int i;
+    unsigned int i;
 
     instruction_t m_functions[] = {
         {"push", _push},
@@ -15,21 +16,16 @@ void call_opcodes(stack_t **stack, char *op, unsigned int line_number)
         {NULL, NULL}
 	};
 
-    if (!op)
-    {
+
         for (i = 0; m_functions[i].opcode; i++)
         {
             if (strcmp(op, m_functions[i].opcode) == 0)
-            {
-                m_functions[i].f(stack, line_number);
-                return;
+            {              
+                return (m_functions[i].f);
             }
         }
-
-        if (strlen(op) != 0)
-		{
-			printf("L%u: unknown instruction %s\n", line_number, op);
-			exit(EXIT_FAILURE);
-		}
-    }
+       
+		fprintf(stderr, "L%u: unknown instruction %s\n", line_number, op);
+		exit(EXIT_FAILURE);
+		
 }
