@@ -2,8 +2,7 @@
 
 /**
  *operation - make the proces of the file
- *@newfile: name of the file
- *@stack: stack parameter
+ *@arv_1: name of the file
  *Return: end of the proccess
  */
 
@@ -30,7 +29,7 @@ int operation(char *arv_1)
 
 		op = _splitline(line);
 
-		if(op)
+		if (op)
 		{
 			wrapper(line_number, op, &head);
 		}
@@ -44,5 +43,4 @@ int operation(char *arv_1)
 	free_l(head);
 	fclose(nf);
 	return (EXIT_SUCCESS);
-
 }

@@ -21,9 +21,9 @@
 */
 typedef struct stack_s
 {
-  int n;
-  struct stack_s *prev;
-  struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -61,6 +61,6 @@ int operation(char *argv);
 char **_splitline(char *line);
 void free_l(stack_t *head);
 int _isnumber(char *chk_strings);
-void (*call_opcodes(char *op, unsigned int line_number))(stack_t **stack, unsigned int line_number);
+void (*opc(char *op, unsigned int line_number))(stack_t **stack, unsigned int);
 int wrapper(unsigned int line, char **chk_strings, stack_t **stack);
 #endif

@@ -2,8 +2,8 @@
 /**
  * _push - add new node
  * @stack: stack
- * @n: new node
- * Return: new node
+ * @line_number: line_number parameter
+ * Return: void
  */
 void _push(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
@@ -21,7 +21,7 @@ void _push(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 	while (tmp != NULL && tmp->next != NULL)
 	{
 		tmp = tmp->next;
-	} 
+	}
 
 	if (tmp)
 	{
@@ -48,14 +48,15 @@ void _push(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 void _pall(stack_t **stack, __attribute__((unused)) unsigned int n)
 {
 	stack_t *tmp = *stack;
-	if(!*stack)
+
+	if (!*stack)
 		exit(EXIT_FAILURE);
 	while (tmp->next != NULL)
 	{
 		tmp = tmp->next;
 	}
 
-	while(tmp != NULL)
+	while (tmp != NULL)
 	{
 		printf("%d\n", tmp->n);
 		tmp = tmp->prev;
