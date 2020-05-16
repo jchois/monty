@@ -64,7 +64,7 @@ void _pall(stack_t **stack, __attribute__((unused)) unsigned int n)
 }
 
 /**
- * _pint: prints all the values on the stack
+ * _pint - prints all the values on the stack
  * @stack: pointer to the stack
  * @line_number: number
  * Return: nothing
@@ -85,6 +85,32 @@ void _pint(stack_t **stack, unsigned int line_number)
 	}
 
 	printf("%d\n", tmp->n);
+}
+
+/**
+ * _pop - removes the top element of the stack
+ * @stack: pointer to the stack
+ * @line_number: number
+ * Return: nothing
+ */
+
+void _pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp = *stack;
+
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+	if (tmp->prev != NULL)
+		tmp->prev->next = NULL;
+	else
+		*stack = NULL;
+	free(tmp);
 }
 
 /**
