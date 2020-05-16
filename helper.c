@@ -84,7 +84,7 @@ void _pint(stack_t **stack, unsigned int line_number)
 		tmp = tmp->next;
 	}
 
-	printf("%d\n", tmp->n)
+	printf("%d\n", tmp->n);
 }
 
 /**
