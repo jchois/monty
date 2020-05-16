@@ -64,7 +64,7 @@ void _pall(stack_t **stack, __attribute__((unused)) unsigned int n)
 }
 
 /**
- * pint: prints all the values on the stack
+ * _pint: prints all the values on the stack
  * @stack: pointer to the stack
  * @line_number: number
  * Return: nothing
@@ -99,3 +99,4 @@ void _nop(stack_t **stack, unsigned int line_number)
 	(void)line_number;
 	(void)stack;
 }
+
