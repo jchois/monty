@@ -64,6 +64,30 @@ void _pall(stack_t **stack, __attribute__((unused)) unsigned int n)
 }
 
 /**
+ * pint: prints all the values on the stack
+ * @stack: pointer to the stack
+ * @line_number: number
+ * Return: nothing
+ */
+void _pint(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp = *stack;
+
+	if (!*stack)
+	{
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	while (!tmp->next)
+	{
+		tmp = tmp->next;
+	}
+
+	printf("%d\n", tmp->n)
+}
+
+/**
  * _nop - doesn't do anything
  * @stack: pointer to the stack
  * @line_number: number

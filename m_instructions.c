@@ -14,6 +14,7 @@ void (*opc(char *op, unsigned int line_number))(stack_t **stack, unsigned int)
 	instruction_t m_functions[] = {
 		{"push", _push},
 		{"pall", _pall},
+        {"pint", _pint},
 		{"nop", _nop},
 		{NULL, NULL}
 	};
