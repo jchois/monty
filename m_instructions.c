@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * opc - select function to call
+ * opc- select function to call
  * @op: getline, operator
  * @line_number: line_number parameter
  * Return: void
@@ -14,7 +14,7 @@ void (*opc(char *op, unsigned int line_number))(stack_t **stack, unsigned int)
 	instruction_t m_functions[] = {
 		{"push", _push},
 		{"pall", _pall},
-        {"nop", _nop},
+		{"nop", _nop},
 		{NULL, NULL}
 	};
 
