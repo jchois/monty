@@ -8,7 +8,7 @@
 
 int operation(char *arv_1)
 {
-	size_t len;
+	size_t len = 0;
 	unsigned int line_number = 0;
 	char *line = NULL;
 	char **op;
