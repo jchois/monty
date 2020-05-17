@@ -67,4 +67,6 @@ void free_l(stack_t *head);
 int _isnumber(char *chk_strings);
 void (*opc(char *op, unsigned int line_number))(stack_t **stack, unsigned int);
 int wrapper(unsigned int line, char **chk_strings, stack_t **stack);
+void swap(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
 #endif
