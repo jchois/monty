@@ -3,57 +3,58 @@
 /**
  *add - sum number
  *@stack:top of the stack
- *@line_number: thenumber of the command 
+ *@line_number: thenumber of the command
  *Return: void
  */
 
 void add(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp = *stack;
+	stack_t *tmp = *stack;
 	int sum;
 
-	if (stack == NULL || !temp || temp->next == NULL)
+	if (stack == NULL || !tmp || tmp->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
-	while (temp->next != NULL)
+	while (tmp->next != NULL)
 	{
-		temp = temp->next;
+		tmp = tmp->next;
 	}
 
-	sum = temp->n + temp->prev->n;
-	temp->prev->n = sum;
-	temp->prev->next = NULL;
+	sum = tmp->n + tmp->prev->n;
+	tmp->prev->n = sum;
+	tmp->prev->next = NULL;
 
-	free(temp);
+	free(tmp);
 }
 
 /**
- *swap - swaps the top two values 
+ *swap - swaps the top two values
  *@stack: top of the stack
- *@line_number: the line number of the command 
+ *@line_number: the line number of the command
  *Return: void
  */
- 
+
 void swap(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp = *stack;
+	stack_t *tmp = *stack;
 	int swap_tmp;
 
-	if (temp == NULL || temp->next == NULL)
+	if (tmp == NULL || tmp->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
-	while (temp->next != NULL)
+	while (tmp->next != NULL)
 	{
-		temp = temp->next;
+		tmp = tmp->next;
 	}
 
-	swap_tmp = temp->n;
-	temp->n = temp->prev->n;
-	temp->prev->n = swap_tmp;
+	swap_tmp = tmp->n;
+	tmp->n = tmp->prev->n;
+	tmp->prev->n = swap_tmp;
+
 }
