@@ -30,7 +30,6 @@ void (*opc(char *op, unsigned int line_number))(stack_t **stack, unsigned int)
 	}
 
 	fprintf(stderr, "L%u: unknown instruction %s\n", line_number, op);
-	free(line_number);
 	free(op);
 	exit(EXIT_FAILURE);
 }
